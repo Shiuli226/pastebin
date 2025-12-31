@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pastebin Lite</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; }
+    textarea { width: 100%; height: 200px; }
+    .small { font-size: 0.9rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Pastebin Lite</h1>
+  <form id="pasteForm">
+    <label>Content</label><br>
+    <textarea id="content" name="content" required></textarea><br>
+    <label>TTL seconds (optional)</label><br>
+    <input id="ttl" type="number" min="1" /><br>
+    <label>Max views (optional)</label><br>
+    <input id="maxviews" type="number" min="1" /><br>
+    <button type="submit">Create paste</button>
+  </form>
+  <p id="result" class="small"></p>
+
+  <script>
+    document.getElementById('pasteForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const content = document.getElementById('content').value;
+      const ttl = document.getElementById('ttl').value;
+      const maxviews = document.getElementById('maxviews').value;
+      const body = { content };
+      if (ttl) body.ttl_seconds = parseInt(ttl, 10);
+      if (maxviews) body.max_views = parseInt(maxviews, 10);
+
+      try {
+        const res = await fetch('/api/pastes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        const json = await res.json();
+        if (res.ok) {
+          document.getElementById('result').innerHTML = 'Paste created: <a href="' + json.url + '">' + json.url + '</a>';
+        } else {
+          document.getElementById('result').textContent = 'Error: ' + (json.error || JSON.stringify(json));
+        }
+      } catch (err) {
+        document.getElementById('result').textContent = 'Request failed: ' + err;
+      }
+    });
+  </script>
+</body>
+</html>
+

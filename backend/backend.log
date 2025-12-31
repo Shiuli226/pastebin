@@ -1,0 +1,40 @@
+nohup: ignoring input
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.5)
+
+2025-12-30T23:26:24.294+05:30  INFO 222432 --- [           main] c.example.pastebin.PastebinApplication   : Starting PastebinApplication v1.0.0 using Java 17.0.17 with PID 222432 (/home/ayushnag/Downloads/pastebin-lite-clean/pastebin-lite-clean/backend/target/pastebin-lite-1.0.0.jar started by ayushnag in /home/ayushnag/Downloads/pastebin-lite-clean/pastebin-lite-clean/backend)
+2025-12-30T23:26:24.297+05:30  INFO 222432 --- [           main] c.example.pastebin.PastebinApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-12-30T23:26:24.965+05:30  INFO 222432 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-12-30T23:26:24.968+05:30  INFO 222432 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-12-30T23:26:24.997+05:30  INFO 222432 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+2025-12-30T23:26:25.396+05:30  INFO 222432 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-12-30T23:26:25.406+05:30  INFO 222432 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-12-30T23:26:25.406+05:30  INFO 222432 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-12-30T23:26:25.442+05:30  INFO 222432 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-12-30T23:26:25.443+05:30  INFO 222432 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1092 ms
+2025-12-30T23:26:26.026+05:30  INFO 222432 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-12-30T23:26:26.441+05:30  WARN 222432 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-12-30T23:26:26.466+05:30  INFO 222432 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-12-30T23:26:26.484+05:30 ERROR 222432 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

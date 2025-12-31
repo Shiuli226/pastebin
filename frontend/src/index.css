@@ -1,0 +1,4 @@
+:root{ --text: #111; }
+html,body,#root{height:100%}
+body{margin:0;background:transparent;color:var(--text);font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:90%}
